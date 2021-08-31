@@ -1,7 +1,6 @@
 ## About this repository
-Home-care is a simple react application that provides an overview of observations
-between caregivers and **care recipients** (older adults). ([HERE](https://home-care-report.herokuapp.com/) is a link to the demo version
-)
+[demo-care](https://demo-care.herokuapp.com/) is a simple react application that provides an overview of observations
+between caregivers and **care recipients** (older adults).
 
 These could be anything from the recording of their mood (happy, sad, bored, confused) to what they drank today (1 pint of water).
 
@@ -51,19 +50,19 @@ Here's the technical this application was made with:
 1. Clone the repository with the following command
    
    ```bash
-   git clone --recursive https://github.com/Abdul-Qoyyum/home-care.git
+   git clone --recursive https://github.com/Abdul-Qoyyum/demo-care.git
    ```
 2. Set up your database credentials   (Do the following within the `backend` folder)
 
-   a. Copy the contents of .env.example file to .env
+   a. Generate `.env` file
     
    ```bash
-   cp .env.example .env
+   yarn gen:env
    ```
    b. Set up database credentials in the .env file.  
 
 
-3. Start the API. (Run the following commands within the backend folder)
+3. Start the API. (Run the following commands within the `backend` folder)
 
    a. Install the dependencies
 
@@ -73,26 +72,26 @@ Here's the technical this application was made with:
    b. Run migration
    
    ```bash
-   npx sequelize db:migrate
+   yarn migrate
    ```
    
    c. Populate the database with dummy data
 
    ```bash
-     npx sequelize db:seed:all
+     yarn db:seed
    ```
 
    d. Run the HTTP server (will start on port `8000`)
 
    ```bash
-   yarn run dev
+   yarn dev
    ```
 4. Start the React app  (Run the following commands within the `front-end` folder)
 
-    a. Copy .env.example to .env
+    a. Generate `.env` file
 
     ```bash
-     cp .env.example .env
+     yarn gen:env
     ```
    
     b. Install the dependencies
@@ -110,7 +109,7 @@ Here's the technical this application was made with:
 ## Test
 1. Do the following within the backend folder.
 
-   a. Set up test database credentials in the .env file
+   a. Set up test database credentials in the `.env` file
    
 ```bash
    #DB for testing
